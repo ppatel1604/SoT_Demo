@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8BA08B51-1646-4D24-895C-6821E670C101}</ProjectGuid>
+    <ProjectGuid>{91591376-4FEF-4A78-9A9E-7FE5FB0C76FD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Calculator_Ugly</RootNamespace>
-    <AssemblyName>Calculator_Ugly</AssemblyName>
+    <RootNamespace>Calculator_Ideal</RootNamespace>
+    <AssemblyName>Calculator_Ideal</AssemblyName>
     <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,13 +41,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Calculator.cs" />
+    <Compile Include="ConsoleLogger.cs" />
+    <Compile Include="FilePersister.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="InMemoryPersister.cs" />
+    <Compile Include="IPersister.cs" />
+    <Compile Include="NullLogger.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Calculator\Calculator.csproj">
-      <Project>{A5C0F0FB-8691-4B5F-8F7A-BD141F06C5FD}</Project>
-      <Name>Calculator</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

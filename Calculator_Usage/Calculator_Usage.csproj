@@ -53,6 +53,10 @@
       <Project>{c52f246e-b3b7-4c76-90f2-56c3ed92aebf}</Project>
       <Name>Caculator_Bad</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Calculator_Ugly\Calculator_Ugly.csproj">
+      <Project>{8ba08b51-1646-4d24-895c-6821e670c101}</Project>
+      <Name>Calculator_Ugly</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
