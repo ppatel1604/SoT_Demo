@@ -7,10 +7,18 @@ namespace Calculator_Usage
         static void Main(string[] args)
         {
             //BadCalculator();
-            UglyCalculator();
+            //UglyCalculator();
+            IdealCalculator();
 
             Console.Write("Press enter to continue...");
             Console.ReadLine();
+        }
+
+        private static void IdealCalculator()
+        {
+            var logger = new Calculator_Ideal.ConsoleLogger();
+            var persister = new Calculator_Ideal.InMemoryPersister();
+            Calculator_Ideal.Calculator calculator = new Calculator_Ideal.Calculator(logger, persister);
         }
 
         private static void UglyCalculator()
