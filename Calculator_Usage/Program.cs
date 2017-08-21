@@ -16,9 +16,10 @@ namespace Calculator_Usage
 
         private static void IdealCalculator()
         {
-            var logger = new Calculator_Ideal.ConsoleLogger();
             var persister = new Calculator_Ideal.InMemoryPersister();
-            Calculator_Ideal.Calculator calculator = new Calculator_Ideal.Calculator(logger, persister);
+
+            new Calculator_Ideal.Calculator(new Calculator_Ideal.ConsoleLogger(), persister);
+            new Calculator_Ideal.Calculator(new Calculator_Ideal.NullLogger(), persister);
         }
 
         private static void UglyCalculator()

@@ -19,6 +19,11 @@ namespace Calculator_Good
             return x + y;
         }
 
+        private void PersistOperation(string operation)
+        {
+            File.AppendAllText("Database.txt", operation);
+        }
+
         public int Multiply(int x, int y)
         {
             if (Math.BigMul(x, y) > int.MaxValue)
@@ -27,11 +32,6 @@ namespace Calculator_Good
             PersistOperation($"{x} x {y}");
             Console.WriteLine($"Multiplying two values <{x}> and <{y}>");
             return x * y;
-        }
-
-        private void PersistOperation(string operation)
-        {
-            File.AppendAllText("Database.txt", operation);
         }
     }
 }

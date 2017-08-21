@@ -37,16 +37,33 @@ namespace Calculator_UnitTests
         [Fact]
         public void add_should_log_operation()
         {
+            // setup
             var loggerMock = new Mock<Calculator_Ideal.ILogger>();
-
             _fixture.Inject(loggerMock);
+
+            var subject = _fixture.Create<Calculator_Ideal.Calculator>();
+
+            // action
+            int x = 5, y = 6;
+            subject.Add(x, y);
+            
+            // assert
+            loggerMock.Verify(l => l.Log($"Adding two values <{x}> and <{y}>"), Times.Once);
+        }
+
+        [Fact]
+        public void add_should_persist_operation()
+        {
+            var persisterMock = new Mock<Calculator_Ideal.IPersister>();
+
+            _fixture.Inject(persisterMock);
 
             var subject = _fixture.Create<Calculator_Ideal.Calculator>();
             var x = 5;
             var y = 6;
             subject.Add(x, y);
-            
-            loggerMock.Verify(l => l.Log($"Adding two values <{x}> and <{y}>"), Times.Once);
+
+            persisterMock.Verify(p => p.PersistOperation($"{x} + {y}"), Times.Once);
         }
     }
 }

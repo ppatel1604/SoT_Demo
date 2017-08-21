@@ -1,4 +1,5 @@
 ﻿using System;
+using Calculator;
 
 namespace Calculator_Ideal
 {
@@ -15,7 +16,8 @@ namespace Calculator_Ideal
 
         public int Add(int x, int y)
         {
-            if ((x >= int.MaxValue && y > 0) || (y >= int.MaxValue && x > 0))
+            if ((x >= int.MaxValue && y > 0) || (y >= int.MaxValue && x > 0) ||
+                (x <= int.MinValue && y < 0) || (y <= int.MinValue && x < 0))
                 throw new OverflowException($"Cannot add {x} and {y} as its result is large");
 
             _persister.PersistOperation($"{x} + {y}");

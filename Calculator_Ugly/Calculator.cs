@@ -6,14 +6,14 @@ namespace Calculator_Ugly
 {
     public class Calculator/* : ICalculator*/
     {
-        public int Add(int x, int y)
+        public long Add(int x, int y)
         {
             if (File.Exists("Database.txt"))
                 File.AppendAllText("Database.txt", $"{x} + {y}");
             else
                 File.WriteAllText("Database.txt", $"{x} + {y}");
             Console.WriteLine($"Adding two values <{x}> and <{y}>");
-            return x + y;
+            return (long)x + (long)y;
         }
 
         public long Multiply(int x, int y)

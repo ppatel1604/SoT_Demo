@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.IO;
 
 namespace Calculator_Ideal
@@ -8,5 +9,7 @@ namespace Calculator_Ideal
         {
             File.AppendAllText("Database.txt", operation);
         }
+
+        public IEnumerable<string> AllOperations { get; }
     }
 }

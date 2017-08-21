@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace Calculator_Ideal
@@ -15,5 +17,8 @@ namespace Calculator_Ideal
         {
             _stringBuilder.AppendLine(operation);
         }
+
+        public IEnumerable<string> AllOperations => _stringBuilder.ToString()
+            .Split(new [] {Environment.NewLine}, StringSplitOptions.RemoveEmptyEntries);
     }
 }

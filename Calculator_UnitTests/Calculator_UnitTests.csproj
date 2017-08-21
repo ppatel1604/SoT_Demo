@@ -166,6 +166,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CalculatorGoodTest.cs" />
     <Compile Include="CalculatorIdealTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -174,10 +175,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator\Calculator.csproj">
+      <Project>{a5c0f0fb-8691-4b5f-8f7a-bd141f06c5fd}</Project>
+      <Name>Calculator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Calculator_Good\Calculator_Good.csproj">
+      <Project>{6a7535fb-bc23-4587-bed2-2f0bd0a06b99}</Project>
+      <Name>Calculator_Good</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Calculator_Ideal\Calculator_Ideal.csproj">
       <Project>{91591376-4fef-4a78-9a9e-7fe5fb0c76fd}</Project>
       <Name>Calculator_Ideal</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets" Condition="Exists('..\packages\NETStandard.Library.2.0.0\build\netstandard2.0\NETStandard.Library.targets')" />
